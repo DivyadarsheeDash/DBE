@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Registration & Violation Tracking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🚗 Vehicle Registration & Violation Tracking System</h1>
+        <nav>
+            <button onclick="showSection('owners')">Owners</button>
+            <button onclick="showSection('vehicles')">Vehicles</button>
+            <button onclick="showSection('violations')">Violations</button>
+            <button onclick="showSection('payments')">Payments</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Owner Section -->
+        <section id="owners" class="active">
+            <h2>Owner Registration</h2>
+            <form id="ownerForm">
+                <input type="text" id="ownerName" placeholder="Owner Name" required>
+                <input type="text" id="ownerAddress" placeholder="Address">
+                <input type="text" id="licenseNo" placeholder="License Number">
+                <input type="text" id="contactNo" placeholder="Contact Number">
+                <button type="submit">Add Owner</button>
+            </form>
+            <table id="ownerTable">
+                <thead><tr><th>Name</th><th>Address</th><th>License No</th><th>Contact</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Vehicle Section -->
+        <section id="vehicles">
+            <h2>Vehicle Registration</h2>
+            <form id="vehicleForm">
+                <input type="text" id="regNo" placeholder="Registration Number" required>
+                <input type="text" id="model" placeholder="Model">
+                <input type="text" id="manufacturer" placeholder="Manufacturer">
+                <input type="number" id="year" placeholder="Year">
+                <button type="submit">Add Vehicle</button>
+            </form>
+            <table id="vehicleTable">
+                <thead><tr><th>Reg No</th><th>Model</th><th>Manufacturer</th><th>Year</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Violation Section -->
+        <section id="violations">
+            <h2>Violation Record</h2>
+            <form id="violationForm">
+                <input type="text" id="vehicleId" placeholder="Vehicle Reg No" required>
+                <input type="text" id="violationType" placeholder="Violation Type">
+                <input type="date" id="violationDate">
+                <input type="text" id="location" placeholder="Location">
+                <input type="number" id="fineAmount" placeholder="Fine Amount">
+                <button type="submit">Add Violation</button>
+            </form>
+            <table id="violationTable">
+                <thead><tr><th>Vehicle</th><th>Type</th><th>Date</th><th>Location</th><th>Fine</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="payments">
+            <h2>Payment Records</h2>
+            <form id="paymentForm">
+                <input type="text" id="violationId" placeholder="Violation Vehicle No" required>
+                <input type="number" id="amountPaid" placeholder="Amount Paid">
+                <select id="status">
+                    <option value="Paid">Paid</option>
+                    <option value="Unpaid">Unpaid</option>
+                </select>
+                <button type="submit">Record Payment</button>
+            </form>
+            <table id="paymentTable">
+                <thead><tr><th>Violation Vehicle</th><th>Amount Paid</th><th>Status</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Vehicle Tracking Project | VSSUT Burla | Divyadarshee Dash</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
